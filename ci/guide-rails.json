@@ -32,7 +32,7 @@
 					{
 						"name": "Print Env",
 						"definition": "Print Environment",
-						"command": "printenv | sort",
+						"command": "printenv | sort\nls",
 						"properties": null
 					},
 					{
@@ -158,7 +158,7 @@
 							}
 						],
 						"code_analysis": {
-							"publish": true,
+							"publish": false,
 							"properties": null
 						},
 						"delete_instances": true
@@ -174,7 +174,10 @@
 								"message": ""
 							}
 						],
-						"code_analysis": null
+						"code_analysis": {
+							"publish": false,
+							"properties": null
+						}
 					},
 					"on_failure": {
 						"notifications": [
@@ -185,7 +188,10 @@
 								"message": ""
 							}
 						],
-						"code_analysis": null
+						"code_analysis": {
+							"publish": false,
+							"properties": null
+						}
 					},
 					"on_abort": {
 						"notifications": [
@@ -196,7 +202,10 @@
 								"message": ""
 							}
 						],
-						"code_analysis": null
+						"code_analysis": {
+							"publish": false,
+							"properties": null
+						}
 					}
 				},
 				"properties": [
@@ -339,7 +348,7 @@
 							}
 						],
 						"code_analysis": {
-							"publish": true,
+							"publish": false,
 							"properties": null
 						},
 						"delete_instances": false
@@ -355,7 +364,10 @@
 								"message": ""
 							}
 						],
-						"code_analysis": null,
+						"code_analysis": {
+							"publish": false,
+							"properties": null
+						},
 						"delete_instances": false
 					},
 					"on_failure": {
@@ -367,7 +379,10 @@
 								"message": ""
 							}
 						],
-						"code_analysis": null,
+						"code_analysis": {
+							"publish": false,
+							"properties": null
+						},
 						"delete_instances": false
 					},
 					"on_abort": {
@@ -379,7 +394,10 @@
 								"message": ""
 							}
 						],
-						"code_analysis": null,
+						"code_analysis": {
+							"publish": false,
+							"properties": null
+						},
 						"delete_instances": false
 					}
 				},

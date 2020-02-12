@@ -3,7 +3,7 @@
 		"version": 1
 	},
 	"application": {
-		"name": "minio",
+		"name": "minio-server",
 		"language": "BOSH",
 		"artifact_store": {
 			"type": "s3",

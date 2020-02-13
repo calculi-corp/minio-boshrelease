@@ -3,6 +3,7 @@ name: mc
 
 templates:
   run.erb: bin/run
+  post-start.erb: bin/post-start
 
 consumes:
 - name: minio

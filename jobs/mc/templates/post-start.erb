@@ -1,0 +1,8 @@
+#!/bin/bash
+
+APP_NAME=mc
+JOB_DIR=/var/vcap/jobs/${APP_NAME}
+
+if [ -f "${JOB_DIR}/bin/run" ]; then
+  ${JOB_DIR}/bin/run
+fi

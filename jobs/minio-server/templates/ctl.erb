@@ -51,6 +51,23 @@ end.else do
   nodes = link('minio-server').instances.map { |instance| "#{protocol}://#{instance.address}${DATA_DIR}/" }
 end %>
 
+# Installing the Consul agent config in the Consul agent data directory
+DATA_BASE_DIR=/var/vcap/data
+JOB_BASE_DIR=/var/vcap/jobs
+PKG_BASE_DIR=/var/vcap/packages
+APP_NAME=minio-server
+cp -f "${JOB_BASE_DIR}/${APP_NAME}/config/minio-server-registry.json" "${DATA_BASE_DIR}/consul/."
+chmod 744 "${DATA_BASE_DIR}/consul/minio-server-registry.json"
+
+echo "$(date) =============================== RELOAD_CONSUL ==============================="
+# Reload Consul to hook up with the Service configuration
+export CONSUL_HTTP_SSL=true
+export CONSUL_CACERT="<%= p('minio.cert_path') %>/cacert/<%= p('consul.environment') %>.cert.pem"
+export CONSUL_CLIENT_CERT="<%= p('minio.cert_path') %>/servercerts/server.cert.pem"
+export CONSUL_CLIENT_KEY="<%= p('minio.cert_path') %>/serverkeys/server.key.pem"
+
+"${PKG_BASE_DIR}/consul/bin/consul" reload
+
 export MINIO_ACCESS_KEY="<%= p("credential.accesskey") %>"
 export MINIO_SECRET_KEY="<%= p("credential.secretkey") %>"
 export MINIO_PCF_TILE_VERSION=<%= p("pcf_tile_version") %>

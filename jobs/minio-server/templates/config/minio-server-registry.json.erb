@@ -1,0 +1,18 @@
+{
+   "service":{
+      "name":"<%= p('consul.servicename') %>",
+      "tags":[
+        "<%= p('consul.tag') %>"
+      ],
+      "address":"",
+      "port":<%= p('port') %>,
+      "enable_tag_override":false,
+      "check": {
+        "id": "<%= p('consul.servicename') %>-hc",
+        "name": "<%= p('consul.servicename') %> health check",
+        "args": ["curl", "http://<%= spec.ip %>:<%= p('port') %>/minio/health/liver"],
+        "interval": "<%= p('hc.interval', '10s') %>",
+        "timeout": "<%= p('hc.request.timeout', '3s') %>"
+      }
+   }
+}

@@ -398,6 +398,10 @@
 					{
 						"name": "port",
 						"value": "9000"
+					},
+					{
+						"name": "consul.environment",
+						"value": "PROD"
 					}
 				],
 				"deployment_strategy": {

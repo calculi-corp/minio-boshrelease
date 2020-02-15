@@ -15,6 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>
 #
 
+<%- if spec.index == 0 -%>
 export PATH=$PATH:/var/vcap/packages/mc
 
 ACCESS_KEY="<%= link('minio').p('credential.accesskey') %>"
@@ -26,3 +27,4 @@ export MC_HOST_myminio=http://$ACCESS_KEY:$SECRET_KEY@$HOST:$PORT
 bash <<EOF
 <%= p("script") %>
 EOF
+<%- end -%>

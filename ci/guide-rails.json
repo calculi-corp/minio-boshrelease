@@ -247,7 +247,7 @@
 				"instance_groups": [
 					{
 						"name": "((application.name))",
-						"number_of_instances": 2,
+						"number_of_instances": 4,
 						"persistent_disk_type": "",
 						"vm_type": "default",
 						"os_type": "default",

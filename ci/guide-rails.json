@@ -135,7 +135,7 @@
 					{
 						"name": "list_buckets",
 						"definition": "list_buckets",
-						"command": "ls /var/vcap/store/minio-server/",
+						"command": "/var/vcap/jobs/mc/bin/run\n\nls /var/vcap/store/minio-server/",
 						"properties": null
 					}
 				],

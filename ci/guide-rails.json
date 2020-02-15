@@ -217,6 +217,10 @@
 					{
 						"name": "port",
 						"value": "9000"
+					},
+					{
+						"name": "minio.buckets_list",
+						"value": "((minio.buckets_list))"
 					}
 				],
 				"deployment_strategy": {

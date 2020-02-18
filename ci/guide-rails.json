@@ -135,7 +135,7 @@
 					{
 						"name": "list_buckets",
 						"definition": "list_buckets",
-						"command": "/var/vcap/jobs/mc/bin/run\n\nls /var/vcap/store/minio-server/",
+						"command": "ls /var/vcap/store/minio-server/",
 						"properties": null
 					}
 				],
@@ -247,7 +247,7 @@
 				"instance_groups": [
 					{
 						"name": "((application.name))",
-						"number_of_instances": 4,
+						"number_of_instances": 1,
 						"persistent_disk_type": "",
 						"vm_type": "default",
 						"os_type": "default",
@@ -508,6 +508,11 @@
 										"value": "grsecret:tls.key"
 									}
 								]
+							},
+							{
+								"name": "mc",
+								"release": "minio",
+								"properties": []
 							}
 						]
 					}

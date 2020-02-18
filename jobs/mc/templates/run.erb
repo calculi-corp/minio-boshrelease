@@ -28,3 +28,4 @@ export MC_HOST_myminio=http://$ACCESS_KEY:$SECRET_KEY@$HOST:$PORT
 <%- p('mc.buckets', []).each do |bucket| -%>
 mc ls myminio/<%= bucket %> || mc mb myminio/<%= bucket %>
 <%- end -%>
+<%- end -%>

@@ -135,7 +135,7 @@
 					{
 						"name": "list_buckets",
 						"definition": "list_buckets",
-						"command": "/var/vcap/jobs/mc/bin/run\n\nls /var/vcap/store/minio-server/",
+						"command": "ls /var/vcap/store/minio-server/",
 						"properties": null
 					}
 				],
@@ -506,6 +506,16 @@
 									{
 										"name": "calculi.intermediate.key",
 										"value": "grsecret:tls.key"
+									}
+								]
+							},
+							{
+								"name": "mc",
+								"release": "minio",
+								"properties": [
+									{
+										"name": "script",
+										"value": "\"\""
 									}
 								]
 							}

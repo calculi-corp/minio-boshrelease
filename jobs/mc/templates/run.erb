@@ -24,7 +24,7 @@ PORT="<%= link('minio').p('port') %>"
 HOST="<%= link('minio').instances[0].address %>"
 export MC_HOST_myminio=http://$ACCESS_KEY:$SECRET_KEY@$HOST:$PORT
 
-bash <<EOF
-<%= p("script") %>
-EOF
+#!/bin/sh
+<%- p('mc.buckets', []).each do |bucket| -%>
+mc ls myminio/<%= bucket %> || mc mb myminio/<%= bucket %>
 <%- end -%>

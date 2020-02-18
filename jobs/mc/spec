@@ -15,3 +15,5 @@ packages:
 properties:
   script:
     description: bash script to run mc commands
+  mc.buckets:
+    description: list of buckets to create

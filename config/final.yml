@@ -1,7 +1,7 @@
 ---
+final_name: minio
 blobstore:
   provider: s3
   options:
-    bucket_name: calculi-middleware
-
-final_name: minio
+    bucket_name: guide-rails-calculi-global-final
+    region: us-west-2

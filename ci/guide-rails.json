@@ -311,7 +311,7 @@
 							},
 							{
 								"name": "mc",
-								"release": "minio",
+								"release": "minio-server",
 								"properties": [
 									{
 										"name": "script",
@@ -514,7 +514,7 @@
 							},
 							{
 								"name": "mc",
-								"release": "minio",
+								"release": "minio-server",
 								"properties": [
 									{
 										"name": "script",
@@ -651,7 +651,7 @@
 				"version": "latest"
 			},
 			{
-				"name": "minio",
+				"name": "minio-server",
 				"version": "latest"
 			}
 		]

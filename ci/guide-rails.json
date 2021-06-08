@@ -31,14 +31,12 @@
 				"exit_actions": {
 					"default": {
 						"fetch_logs": true,
+						"code_analysis": null,
 						"delete_instances": true
 					}
 				},
 				"deployment_strategy": {},
-				"application_init": {
-					"command": "",
-					"arguments": null
-				},
+				"application_init": {},
 				"instance_tags": [
 					{
 						"name": "application.name",
@@ -46,18 +44,7 @@
 					}
 				],
 				"post_deployment_actions": {
-					"instances": null,
-					"loadbalanced": false,
-					"loadbalancer": {
-						"TargetGroupName": "",
-						"TargetGroupPort": 0,
-						"TargetGroupProtocol": "",
-						"TargetType": "",
-						"VPCID": "",
-						"HealthCheckEnabled": false,
-						"HealthCheckPort": "",
-						"UnhealthyThresholdCount": 0
-					}
+					"loadbalancer": {}
 				},
 				"cache_info": {},
 				"tasks": [
@@ -83,6 +70,7 @@
 			{
 				"name": "Integration",
 				"segment_type": "integration",
+				"persistent": true,
 				"run_after": [
 					"Build"
 				],
@@ -97,6 +85,7 @@
 				"exit_actions": {
 					"default": {
 						"fetch_logs": true,
+						"code_analysis": null,
 						"delete_instances": true
 					}
 				},
@@ -125,14 +114,9 @@
 					"update_watch_time": "5000-30000",
 					"serial": false
 				},
-				"application_init": {
-					"command": "",
-					"arguments": null
-				},
+				"application_init": {},
 				"process": {
-					"init": {
-						"command": ""
-					}
+					"init": {}
 				},
 				"instance_tags": [
 					{
@@ -144,17 +128,20 @@
 					{
 						"name": "((application.name))",
 						"number_of_instances": 1,
-						"persistent_disk_type": "",
+						"cloud_provider_type": "aws",
 						"cloud_provider_name": "guide-rails-aws-us-west-2",
 						"vm_type": "default",
 						"os_type": "default",
 						"networks": [
 							"integration"
 						],
-						"availability_zones": null,
+						"availability_zones": [
+							"default"
+						],
 						"deployment_strategy": {},
 						"dependencies": [
 							{
+								"id": "dccb10e9-9b24-4519-4394-7e5603a5cc9c",
 								"name": "consul",
 								"release": "consul",
 								"provides": [
@@ -214,19 +201,20 @@
 					}
 				],
 				"post_deployment_actions": {
-					"instances": null,
-					"loadbalanced": false,
-					"loadbalancer": {
-						"TargetGroupName": "",
-						"TargetGroupPort": 0,
-						"TargetGroupProtocol": "",
-						"TargetType": "",
-						"VPCID": "",
-						"HealthCheckEnabled": false,
-						"HealthCheckPort": "",
-						"UnhealthyThresholdCount": 0
+					"loadbalancer": {}
+				},
+				"deployment_target": 1,
+				"releases": [
+					{
+						"id": "dccb10e9-9b24-4519-4394-7e5603a5cc9c",
+						"name": "consul",
+						"version": "latest"
+					},
+					{
+						"name": "minio",
+						"version": "latest"
 					}
-				}
+				]
 			},
 			{
 				"name": "Production",
@@ -238,6 +226,7 @@
 				"exit_actions": {
 					"default": {
 						"fetch_logs": true,
+						"code_analysis": null,
 						"delete_instances": false
 					}
 				},
@@ -266,14 +255,9 @@
 					"update_watch_time": "5000-30000",
 					"serial": false
 				},
-				"application_init": {
-					"command": "",
-					"arguments": null
-				},
+				"application_init": {},
 				"process": {
-					"init": {
-						"command": ""
-					}
+					"init": {}
 				},
 				"instance_tags": [
 					{
@@ -285,17 +269,20 @@
 					{
 						"name": "((application.name))",
 						"number_of_instances": 1,
-						"persistent_disk_type": "",
+						"cloud_provider_type": "aws",
 						"cloud_provider_name": "guide-rails-aws-us-west-2",
 						"vm_type": "default",
 						"os_type": "default",
 						"networks": [
 							"production"
 						],
-						"availability_zones": null,
+						"availability_zones": [
+							"default"
+						],
 						"deployment_strategy": {},
 						"dependencies": [
 							{
+								"id": "dccb10e9-9b24-4519-4394-7e5603a5cc9c",
 								"name": "consul",
 								"release": "consul",
 								"provides": [
@@ -355,43 +342,30 @@
 					}
 				],
 				"post_deployment_actions": {
-					"instances": null,
-					"loadbalanced": false,
-					"loadbalancer": {
-						"TargetGroupName": "",
-						"TargetGroupPort": 0,
-						"TargetGroupProtocol": "",
-						"TargetType": "",
-						"VPCID": "",
-						"HealthCheckEnabled": false,
-						"HealthCheckPort": "",
-						"UnhealthyThresholdCount": 0
+					"loadbalancer": {}
+				},
+				"deployment_target": 1,
+				"releases": [
+					{
+						"id": "dccb10e9-9b24-4519-4394-7e5603a5cc9c",
+						"name": "consul",
+						"version": "latest"
+					},
+					{
+						"name": "minio",
+						"version": "latest"
 					}
-				}
+				]
 			}
 		],
 		"exit_actions": {
 			"default": {
 				"fetch_logs": true,
+				"code_analysis": null,
 				"delete_instances": true
 			}
 		},
 		"default_properties": [
-			{
-				"name": "minio.region",
-				"value": "us-east-1",
-				"type": "string"
-			},
-			{
-				"name": "minio.bucket",
-				"value": "guide-rails-calculi-docker",
-				"type": "string"
-			},
-			{
-				"name": "minio.signature_version",
-				"value": "s3v4",
-				"type": "string"
-			},
 			{
 				"name": "minio.access",
 				"value": "secret:121ad8f4-add6-4ec0-5eab-230d7b37503b/7a4a0043-8a17-43db-40a4-28feb5f9fe6a/51f865d6-56fb-4d9e-5454-0886ebd45d76/15e31eb5-eefb-4f27-5716-3cfab6cbf0ab/minio.access",
@@ -399,6 +373,21 @@
 				"type": "string",
 				"secret": true,
 				"secret_path": "121ad8f4-add6-4ec0-5eab-230d7b37503b/7a4a0043-8a17-43db-40a4-28feb5f9fe6a/51f865d6-56fb-4d9e-5454-0886ebd45d76/15e31eb5-eefb-4f27-5716-3cfab6cbf0ab/minio.access"
+			},
+			{
+				"name": "minio.bucket",
+				"value": "guide-rails-calculi-docker",
+				"type": "string"
+			},
+			{
+				"name": "minio.port",
+				"value": "9010",
+				"type": "string"
+			},
+			{
+				"name": "minio.region",
+				"value": "us-east-1",
+				"type": "string"
 			},
 			{
 				"name": "minio.secret",
@@ -409,31 +398,18 @@
 				"secret_path": "121ad8f4-add6-4ec0-5eab-230d7b37503b/7a4a0043-8a17-43db-40a4-28feb5f9fe6a/51f865d6-56fb-4d9e-5454-0886ebd45d76/15e31eb5-eefb-4f27-5716-3cfab6cbf0ab/minio.secret"
 			},
 			{
-				"name": "minio.port",
-				"value": "9010",
+				"name": "minio.signature_version",
+				"value": "s3v4",
 				"type": "string"
 			}
 		],
 		"deployment_files": [],
-		"application_init": {
-			"command": "",
-			"arguments": null
-		},
+		"application_init": {},
 		"process": {
 			"init": {
 				"command": "bin/start-service.sh"
 			}
-		},
-		"releases": [
-			{
-				"name": "consul",
-				"version": "latest"
-			},
-			{
-				"name": "minio",
-				"version": "latest"
-			}
-		]
+		}
 	},
 	"organization": {
 		"orgname": "GR-Product"

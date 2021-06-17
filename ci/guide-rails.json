@@ -54,7 +54,7 @@
 							{
 								"name": "Print Env",
 								"definition": "Print Environment",
-								"command": "printenv | sort",
+								"command": "printenv | sort\nls",
 								"properties": null
 							},
 							{
@@ -189,7 +189,7 @@
 							},
 							{
 								"name": "mc",
-								"release": "minio",
+								"release": "minio-server",
 								"properties": [
 									{
 										"name": "script",
@@ -211,7 +211,7 @@
 						"version": "latest"
 					},
 					{
-						"name": "minio",
+						"name": "minio-server",
 						"version": "latest"
 					}
 				]
@@ -330,7 +330,7 @@
 							},
 							{
 								"name": "mc",
-								"release": "minio",
+								"release": "minio-server",
 								"properties": [
 									{
 										"name": "script",
@@ -352,7 +352,7 @@
 						"version": "latest"
 					},
 					{
-						"name": "minio",
+						"name": "minio-server",
 						"version": "latest"
 					}
 				]

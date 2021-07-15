@@ -54,7 +54,7 @@
 							{
 								"name": "Print Env",
 								"definition": "Print Environment",
-								"command": "printenv | sort",
+								"command": "printenv | sort\nls",
 								"properties": null
 							},
 							{

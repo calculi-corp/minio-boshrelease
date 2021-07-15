@@ -212,7 +212,7 @@
 					},
 					{
 						"name": "minio",
-						"version": "latest"
+						"version": "2021.7.12-T02-44-53Z"
 					}
 				]
 			},

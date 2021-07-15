@@ -54,7 +54,7 @@
 							{
 								"name": "Print Env",
 								"definition": "Print Environment",
-								"command": "printenv | sort\nls",
+								"command": "printenv | sort",
 								"properties": null
 							},
 							{
@@ -370,9 +370,7 @@
 				"name": "minio.access",
 				"value": "secret:121ad8f4-add6-4ec0-5eab-230d7b37503b/7a4a0043-8a17-43db-40a4-28feb5f9fe6a/51f865d6-56fb-4d9e-5454-0886ebd45d76/15e31eb5-eefb-4f27-5716-3cfab6cbf0ab/minio.access",
 				"protected": true,
-				"type": "string",
-				"secret": true,
-				"secret_path": "121ad8f4-add6-4ec0-5eab-230d7b37503b/7a4a0043-8a17-43db-40a4-28feb5f9fe6a/51f865d6-56fb-4d9e-5454-0886ebd45d76/15e31eb5-eefb-4f27-5716-3cfab6cbf0ab/minio.access"
+				"type": "string"
 			},
 			{
 				"name": "minio.bucket",
@@ -393,9 +391,7 @@
 				"name": "minio.secret",
 				"value": "secret:121ad8f4-add6-4ec0-5eab-230d7b37503b/7a4a0043-8a17-43db-40a4-28feb5f9fe6a/51f865d6-56fb-4d9e-5454-0886ebd45d76/15e31eb5-eefb-4f27-5716-3cfab6cbf0ab/minio.secret",
 				"protected": true,
-				"type": "string",
-				"secret": true,
-				"secret_path": "121ad8f4-add6-4ec0-5eab-230d7b37503b/7a4a0043-8a17-43db-40a4-28feb5f9fe6a/51f865d6-56fb-4d9e-5454-0886ebd45d76/15e31eb5-eefb-4f27-5716-3cfab6cbf0ab/minio.secret"
+				"type": "string"
 			},
 			{
 				"name": "minio.signature_version",
